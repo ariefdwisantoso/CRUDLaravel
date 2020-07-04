@@ -19,5 +19,11 @@ Route::post('/', 'PertanyaanController@store');
 Route::get('jawaban/create/{pertanyaan_id}', 'JawabanController@create');
 Route::post('jawaban/create/{pertanyaan_id}', 'JawabanController@store');
 Route::get('jawaban/view/{pertanyaan_id}', 'JawabanController@view');
+Route::get('pertanyaan/edit/{id}', 'PertanyaanController@getEdit');
+Route::post('pertanyaan/edit/{id}', 'PertanyaanController@postEdit');
+Route::get('pertanyaan/hapus/{id}', 'PertanyaanController@getHapus');
+Route::post('pertanyaan/hapus/{id}', 'PertanyaanController@postHapus');
+
+
 
 

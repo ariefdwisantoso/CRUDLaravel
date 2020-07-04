@@ -33,5 +33,34 @@ class PertanyaanController extends Controller
         return redirect('/')->with('success', 'Berhasil menambah pertanyaan. Terima Kasih.');
     }
 
+    public function getEdit(Request $request, $id){
+        $pertanyaan = Pertanyaan::find($id);
+        return view ('pertanyaan/edit', compact('pertanyaan'));
+    }
 
+    public function postEdit(Request $request, $id)
+    {
+
+        $this->validate($request, ["judul" => "required", 
+                                   "isi" => "required", 
+                                   ]);
+        $pertanyaan             = Pertanyaan::find($id);
+        $pertanyaan->judul      = $request->judul;
+        $pertanyaan->isi        = $request->isi;
+        $pertanyaan->save();
+        
+        return redirect('/')->with('success', 'Berhasil mengubah pertanyaan. Terima Kasih.');
+    }
+
+    public function getHapus(Request $request, $id){
+        $pertanyaan = Pertanyaan::find($id);
+        return view ('pertanyaan/hapus', compact('pertanyaan'));
+    }
+
+    public function postHapus(Request $request, $id)
+    {
+        $pertanyaan = Pertanyaan::find($id);
+        $pertanyaan->delete();
+        return redirect('/')->with('error', 'Berhasil menghapus pertanyaan. Terima Kasih.');
+    }
 }

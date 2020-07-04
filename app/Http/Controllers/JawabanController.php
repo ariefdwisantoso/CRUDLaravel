@@ -30,7 +30,7 @@ class JawabanController extends Controller
     public function view(Request $request){
         $pertanyaan = Pertanyaan::all();
         $jawaban    = Jawaban::with('pertanyaan')->get();
-        return view ('jawaban.view', compact('pertanyaan','jawaban'));
+        return view ('jawaban.view', compact('pertanyaan'));
         //dd($pertanyaan, $jawaban);
     }
 }

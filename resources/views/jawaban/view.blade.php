@@ -16,7 +16,8 @@
                 <div class="col-sm-10">
                     <div class="profile">
                         <p class="cust-profession" style="font-style:italic"> 
-                            <td>Posted on {!! $j->created_at !!}</td>
+                            <td>Posted on {!! $j->created_at !!}</td> |
+                            <td>Updated on {!! $j->updated_at !!}</td>
                     </div>
                 </div>
             </div>

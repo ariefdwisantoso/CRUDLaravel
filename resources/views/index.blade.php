@@ -18,9 +18,12 @@
                 <div class="col-sm-10">
                     <div class="profile">
                         <p class="cust-profession" style="font-style:italic"> 
-                            <td>Posted on {!! $t->created_at !!}</td>
+                            <td>Posted on {!! $t->created_at !!}</td> |
+                            <td>Updated on {!! $t->updated_at !!}</td>
                             <a href="{{url('/jawaban/create',$t->id)}}" class="btn btn-primary" title="Balas" rel="tooltip"><i class="fa fa-reply" aria-hidden="true"></i> Balas</a>
-                            <a href="{{url('/jawaban/view',$t->id)}}" class="btn btn-primary" title="Balas" rel="tooltip"><i class="fa fa-eye" aria-hidden="true"></i> View Jawaban</a>
+                            <a href="{{url('/jawaban/view',$t->id)}}" class="btn btn-primary" title="View Jawaban" rel="tooltip"><i class="fa fa-eye" aria-hidden="true"></i> View Jawaban</a>
+                            <a href="{{url('/pertanyaan/edit', $t->id)}}" class="btn btn-primary" title="Edit Pertanyaan" rel="tooltip"><i class="fa fa-edit" aria-hidden="true"></i> Edit Pertanyaan</a></h5>
+                            <a href="{{url('/pertanyaan/hapus',$t->id)}}" class="btn btn-danger" title="Hapus" rel="tooltip"><i class="fa fa-trash" aria-hidden="true"></i> Hapus</a>
                         </p>
                     </div>
                 </div>
